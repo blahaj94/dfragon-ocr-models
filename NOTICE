@@ -1,0 +1,19 @@
+DFRAGON Korean nickname recognition model
+
+This model is a fine-tuned FP32 ONNX derivative of the
+korean_PP-OCRv5_mobile_rec model provided by the PaddleOCR team.
+
+Upstream model: https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec
+Upstream implementation: https://github.com/PaddlePaddle/PaddleOCR
+Upstream implementation revision: b03f46425e8ff4442b268ce449e3eef758146cd4
+Upstream license: Apache License, Version 2.0 (see LICENSE)
+
+Modifications: synthetic nickname fine-tuning, character dictionary changes,
+selection of epoch 8 by validation character error rate, and FP32 ONNX export
+from the original checkpoint with a symbolic input width [1, 3, 48, W].
+This artifact targets ONNX Runtime Web WASM; browser inference and accuracy
+were not re-evaluated for this dynamic-width export.
+
+This repository does not distribute the training images, source nickname
+records, fonts, or the inference runtime. See README.md for model provenance,
+checksums, input requirements, and evaluation scope.
