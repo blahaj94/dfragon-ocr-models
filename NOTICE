@@ -9,10 +9,12 @@ Upstream implementation revision: b03f46425e8ff4442b268ce449e3eef758146cd4
 Upstream license: Apache License, Version 2.0 (see LICENSE)
 
 Modifications: synthetic nickname fine-tuning, character dictionary changes,
-selection of epoch 8 by validation character error rate, and FP32 ONNX export
-from the original checkpoint with a symbolic input width [1, 3, 48, W].
-This artifact targets ONNX Runtime Web WASM; browser inference and accuracy
-were not re-evaluated for this dynamic-width export.
+selection of epoch 13 after 20 epochs by validation character error rate,
+and FP32 ONNX export from the original checkpoint with a symbolic input
+width [1, 3, 48, W].
+Browser inference was checked with ONNX Runtime Web 1.24.3 WASM at input
+widths 160, 320, and 480. Full-dataset recognition accuracy was not
+re-evaluated for this dynamic-width export; see README.md for scope.
 
 This repository does not distribute the training images, source nickname
 records, fonts, or the inference runtime. See README.md for model provenance,
